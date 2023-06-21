@@ -1,0 +1,52 @@
+$shadow: .3rem .3rem .6rem var(--greyLight-2), 
+-.2rem -.2rem .5rem var(--white);
+$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), 
+inset -.2rem -.2rem .5rem var(--white);
+
+.playButtonWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--greyLight-1);
+    border-radius: var(--border-radius);
+    box-shadow: $shadow, $inner-shadow;
+
+    .icon {
+        cursor: pointer;
+        z-index: 2;
+    }
+  }
+
+  .active {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    opacity: 0.75;
+    background-color: var(--greyLight-1);
+    border-radius: var(--border-radius);
+    animation: waves 4s linear infinite alternate;
+    box-shadow: $shadow, $inner-shadow;
+    &.secondary {
+        animation: waves 4s linear 2s infinite alternate;
+    }
+  }
+
+
+  @keyframes waves {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+  }
